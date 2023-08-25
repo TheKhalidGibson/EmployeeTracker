@@ -5,7 +5,7 @@ USE registrar_db;
 
 CREATE TABLE department (
   id INT auto_increment PRIMARY KEY,
-  name VARCHAR(30),
+  name VARCHAR(30) NOT NULL,
 );
 
 CREATE TABLE role (
@@ -19,9 +19,10 @@ CREATE TABLE role (
 
 CREATE TABLE employee (
   id INT auto_increment PRIMARY KEY,
-  first_name VARCHAR(30),
-  last_name VARCHAR(30),
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
   role_id INT,
+  manager_id INT 
   FOREIGN KEY (instructor_id)
   REFERENCES instructors(id)
 );
