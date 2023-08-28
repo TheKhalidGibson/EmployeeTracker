@@ -5,7 +5,7 @@ const cTable = require('console.table');
 
 // let selectedChoice =
 
-
+const answers = 'input'
 
 
 
@@ -31,14 +31,14 @@ inquirer
         message: "What is the name of the employee?",
         when: function() {
           return answers.start === 'Add Employee'
-        }
+        } 
       },
       {
         type: 'input',
         name: 'updateRole',
         message: "What is the new role of the employee?",
         when: function() {
-          return answers.addEmployee === 'Update Employee Role'
+          return answers.addEmployee === 'Employee'
         }
       },
       {
