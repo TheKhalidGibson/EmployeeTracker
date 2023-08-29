@@ -160,6 +160,7 @@ function mainMenu() {
 
 }
 
+// The following code executes the functions and returns to main menu after each question series
 function viewDepartments() {
   
   connection.query(
