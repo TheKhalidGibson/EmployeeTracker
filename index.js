@@ -69,23 +69,8 @@ function mainMenu() {
         }
       },
       // End of the Add Employee section
+
       // Update Employee Role begins here
-      {
-        type: 'input',
-        name: 'first_name',
-        message: "What is the first name of this employee?",
-        when: function (answers) {
-          return answers.start === 'Update Employee Role'
-        }
-      },
-      {
-        type: 'input',
-        name: 'last_name',
-        message: "What is the last name of this employee?",
-        when: function (answers) {
-          return answers.start === 'Update Employee Role'
-        }
-      },
       {
         type: 'input',
         name: 'role_id',
@@ -94,15 +79,26 @@ function mainMenu() {
           return answers.start === 'Update Employee Role'
         }
       },
+      // The following question is leading up to eventually being able to change managers 
+      // {
+      //   type: 'input',
+      //   name: 'manager_id',
+      //   message: "What is the manager id for this role?",
+      //   when: function (answers) {
+      //     return answers.start === 'Update Employee Role'
+      //   }
+      // },
+      // End of manager change code
       {
         type: 'input',
-        name: 'manager_id',
-        message: "What is the manager id for this role?",
+        name: 'id',
+        message: "What is the employee id for this update?",
         when: function (answers) {
           return answers.start === 'Update Employee Role'
         }
       },
       // End of the Update Employee Role section
+
       // Add Role begins here
       {
         type: 'input',
@@ -129,6 +125,7 @@ function mainMenu() {
         }
       },
       // End of the Add Role section
+
       // Add Department begins here
       {
         type: 'input',
@@ -154,6 +151,8 @@ function mainMenu() {
         newEmployee({first_name:answers.first_name, last_name:answers.last_name, role_id:answers.role_id, manager_id:answers.manager_id})
       } else if (answers.start === 'Add Role') {
         newRole({title:answers.title, salary:answers.salary, department_id:answers.department_id})
+      } else if (answers.start === 'Update Employee Role') {
+        updateRole({role_id:answers.role_id}, answers.id)
       } else if (answers.start === 'Quit') {
         quitMenu()
       }
@@ -233,6 +232,20 @@ function newRole(object) {
   connection.query(
     'INSERT INTO role SET ?',
     object,
+    function(err, results) {
+      if(err){console.log(err)}
+      console.table(results); // results contains rows returned by server
+      mainMenu()
+    }
+  )
+  
+}
+
+function updateRole(object, id) {
+  console.log(object)
+  connection.query(
+    'UPDATE employee SET ? where id=?',
+    [object, id],
     function(err, results) {
       if(err){console.log(err)}
       console.table(results); // results contains rows returned by server
