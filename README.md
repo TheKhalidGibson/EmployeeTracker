@@ -30,4 +30,55 @@ The following video is an example given to me to demonstrate how the application
 
 ## Getting Started
 
-**Important**:
+This Challenge has required me to utilize the video submission method and I have referred to the [Fullstack Blog Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for guidance.
+
+I have used [MySQL2 package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and performed queries, and the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4) to interact with the user via the command line.
+
+**Important**: Since I committed a file that contains my database credentials, I was cognizant of the information I displayed. No personal information or private details were used during the course of this assignment.
+
+My database schema was designed based upon the following image:
+
+![Database schema includes tables labeled “employee,” role,” and “department.”](./Assets/12-sql-homework-demo-01.png)
+
+As shown, my schema contains the following:
+
+* `department`
+
+    * `id`: `INT PRIMARY KEY`
+
+    * `name`: `VARCHAR(30)` to hold department name
+
+* `role`
+
+    * `id`: `INT PRIMARY KEY`
+
+    * `title`: `VARCHAR(30)` to hold role title
+
+    * `salary`: `DECIMAL` to hold role salary
+
+    * `department_id`: `INT` to hold reference to department role belongs to
+
+* `employee`
+
+    * `id`: `INT PRIMARY KEY`
+
+    * `first_name`: `VARCHAR(30)` to hold employee first name
+
+    * `last_name`: `VARCHAR(30)` to hold employee last name
+
+    * `role_id`: `INT` to hold reference to employee role
+
+    * `manager_id`: `INT` to hold reference to another employee that is the manager of the current employee (`null` if the employee has no manager)
+
+    I have included separate files that perform functions for specific SQL queries used. This includes a `seeds.sql` file that pre-populates my database.
+
+    ## Review
+
+    This section is here to highlight the required elements needed for review:
+
+    * My walkthrough video demonstrating the functionality of the application:
+
+
+    * The URL to my EmployeeTracker GitHub repository, with an unique name and this README to describe the project:
+
+    ## Screenshots
