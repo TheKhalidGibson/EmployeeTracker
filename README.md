@@ -19,7 +19,18 @@ SO THAT I can manage, organize and plan business thoroughly
 ## Acceptance Criteria
 
 ```
-
+GIVEN a command-line application that asks for user input
+WHEN I run the application
+THEN I am prompted with the following: View All Employees, Add Employee, Update Employee Role, View All Roles, Add Role, View All Departments, Add Department, and Quit
+WHEN I choose a "View All.." option from the list 
+THEN I am presented with a clean chart that displays the nature and contents of that particular dataset
+WHEN I choose a "Add.." option 
+THEN I will be presented with a series of questions that includes id numbers, names, titles, and other relevant data to match the dataset I am looking to add too
+WHEN I am finished with those additions
+THEN those additions will be inserted into the datasets and will be viewable upon revisiting the "View All.." options 
+WHEN I choose the "Update Employee" option
+THEN I will be asked to provide first and last name of the employee as well as the role id and manager id in order to get them into the new role
+WHEN I am done with the prompt I choose "Quit" to exit out of the prompt
 ```
 
 ## Mock-Up
@@ -38,7 +49,7 @@ I have used [MySQL2 package](https://www.npmjs.com/package/mysql2) to connect to
 
 My database schema was designed based upon the following image:
 
-![Database schema includes tables labeled “employee,” role,” and “department.”](./Assets/12-sql-homework-demo-01.png)
+![Database schema includes tables labeled “employee,” role,” and “department.”](./assets/12-sql-homework-demo-01.png)
 
 As shown, my schema contains the following:
 
@@ -78,7 +89,17 @@ As shown, my schema contains the following:
 
     * My walkthrough video demonstrating the functionality of the application:
 
+    Refer to this [Walkthrough Video](https://drive.google.com/file/d/1T-RyWl9JdJJnbQ53PikV4AbXhEEf5nE3/view) to view the functionality of this application
+    
 
     * The URL to my EmployeeTracker GitHub repository, with an unique name and this README to describe the project:
 
+    Refer to this link [GitHub Repository](https://github.com/TheKhalidGibson/EmployeeTracker) to view and explore the GitHub repo for this assignment
+
     ## Screenshots
+
+    The following images reflect the functionality and final results of development for this command-line application:
+    
+    ![Image showing the application being run in the terminal and some of its results](./assets/img2.png)
+    ![Image showing the application being run in the terminal and some of its results](./assets/img1.png)
+    
