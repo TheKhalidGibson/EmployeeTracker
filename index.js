@@ -154,6 +154,8 @@ function mainMenu() {
         newEmployee({first_name:answers.first_name, last_name:answers.last_name, role_id:answers.role_id, manager_id:answers.manager_id})
       } else if (answers.start === 'Add Role') {
         newRole({title:answers.title, salary:answers.salary, department_id:answers.department_id})
+      } else if (answers.start === 'Quit') {
+        quitMenu()
       }
     })
 
@@ -238,4 +240,9 @@ function newRole(object) {
     }
   )
   
+}
+
+function quitMenu() {
+  
+  process.exit();
 }
